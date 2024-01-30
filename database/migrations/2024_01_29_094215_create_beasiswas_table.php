@@ -22,6 +22,7 @@ return new class extends Migration
             $table->decimal('ipk_terakhir', 3, 2);
             $table->string('pilihan_beasiswa');
             $table->string('upload_berkas')->nullable();
+            $table->string('status_ajuan')->default();
             $table->timestamps();
         });
     }

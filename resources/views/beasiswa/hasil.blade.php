@@ -24,6 +24,7 @@
                     <th style="border: 2px solid #dee2e6;">IPK Terakhir</th>
                     <th style="border: 2px solid #dee2e6;">Pilihan Beasiswa</th>
                     <th style="border: 2px solid #dee2e6;">Upload Berkas</th>
+                    <th style="border: 2px solid #dee2e6;">Status Pengajuan</th>
                     <th style="border: 2px solid #dee2e6;">Aksi</th>
                 </tr>
             </thead>
@@ -39,6 +40,7 @@
                     <td style="border: 2px solid #dee2e6;">{{ $b->ipk_terakhir }}</td>
                     <td style="border: 2px solid #dee2e6;">{{ $b->pilihan_beasiswa }}</td>
                     <td style="border: 2px solid #dee2e6;">{{ $b->upload_berkas }}</td>
+                    <td style="border: 2px solid #dee2e6;">{{ $b->status_ajuan }}</td>
                     <td style="border: 2px solid #dee2e6;">
                         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                             <a class="btn btn-warning me-2 rounded" href="/beasiswa/{{ $b->id }}/edit">Edit</a>

@@ -22,7 +22,22 @@ class beasiswaController extends Controller
     public function store(Request $request)
     {
         // dd($request->except(['_token', 'submit']));
-        Beasiswa::create($request->except(['_token', 'submit']));
+        $request->validate([
+            'nama' => 'required|string',
+            'email' => 'required|email',
+            // ... (tambahkan validasi untuk kolom lain)
+        ]);
+
+        // Ambil data dari request kecuali _token dan submit
+        $data = $request->except(['_token', 'submit']);
+
+        // Set status ajuannya
+        $data['status_ajuan'] = 'Belum di verifikasi';
+
+        // Buat objek Beasiswa dan simpan data
+        Beasiswa::create($data);
+
+        // Redirect atau lakukan tindakan lain setelah penyimpanan
         return redirect('/hasil');
     }
 
