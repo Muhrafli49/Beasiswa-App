@@ -69,7 +69,7 @@
             {{-- IPK Terakhir --}}
             <div class="mb-3">
                 <label for="ipk" class="form-label">IPK Terakhir</label>
-                <input type="text" class="form-control" id="ipk" name="ipk_terakhir" placeholder="Masukkan IPK Terakhir">
+                <input type="text" class="form-control" id="ipk" name="ipk_terakhir" placeholder="Masukkan IPK Terakhir" oninput="checkInput()">
             </div>
 
             {{-- Pilihan Beasiswa --}}
@@ -91,7 +91,7 @@
 
             {{-- Tombol Daftar dan Batal --}}
             <div class="mb-3 d-flex justify-content-end">
-                <button type="submit" name="submit" value="daftar" class="btn btn-primary me-2" onclick="return confirm('Apakah yakin ingin menambahkan beasiswa?')">Daftar</button>
+                <button type="submit" name="submit" value="daftar" id="submitBtn" class="btn btn-primary me-2" onclick="return confirm('Apakah yakin ingin menambahkan beasiswa?')">Daftar</button>
                 <button type="button" class="btn btn-secondary" onclick="resetFormAndRefresh()">Batal</button>
             </div>                     
         </form>
@@ -102,5 +102,18 @@
 <footer class="bg-dark text-light text-center p-3 mt-5">
     © 2024 Copyright All Rights Reserved - Muhamad Rafli 20102031
 </footer>
+
+<script>
+    function checkInput() {
+        var inputNumber = document.getElementById('ipk').value;
+        var submitButton = document.getElementById('submitBtn');
+
+        if (inputNumber < 3) {
+            submitButton.disabled = true;
+        } else {
+            submitButton.disabled = false;
+        }
+    }
+</script>
 @endsection
 
