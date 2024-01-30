@@ -25,7 +25,6 @@ class beasiswaController extends Controller
         $request->validate([
             'nama' => 'required|string',
             'email' => 'required|email',
-            // ... (tambahkan validasi untuk kolom lain)
         ]);
 
         // Ambil data dari request kecuali _token dan submit

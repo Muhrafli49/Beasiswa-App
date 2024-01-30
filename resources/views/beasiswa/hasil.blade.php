@@ -6,6 +6,14 @@
     <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
         <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand text-light" href="#" style="font-size: 24px; font-weight: bold;">Beasiswa </a>
+            <ul class="navbar-nav d-flex flex-row">
+                <li class="nav-item me-4">
+                    <a
+                        href="/"
+                        class="nav-link text-light py-2"
+                        >Home</a
+                    >
+                </li>
         </div>
     </nav>
     {{-- navbar end --}}
@@ -47,7 +55,7 @@
                             <form action="/beasiswa/{{ $b->id }}" method="POST">
                                 @csrf
                                 @method('delete')
-                                <input class="btn btn-danger me-2 rounded" type="submit" value="Delete">
+                                <input class="btn btn-danger me-2 rounded" type="submit" value="Delete" onclick="return confirm('Apakah yakin ingin menghapus data beasiswa?')">
                             </form>
                         </div>
                     </td>

@@ -8,18 +8,13 @@
             <a class="navbar-brand text-light" href="#" style="font-size: 24px; font-weight: bold;">Beasiswa</a>
             <ul class="navbar-nav d-flex flex-row">
                 <li class="nav-item me-4">
-                    <a
-                        href="#"
-                        class="nav-link text-light py-2"
-                        >Daftar</a
-                    >
+                    <a href="#" class="nav-link text-light py-2">Daftar</a>
+                </li>
+                <li class="nav-item me-4">
+                    <a href="/hasil" class="nav-link text-light py-2">Hasil</a>
                 </li>
                 <li class="nav-item ms-auto">
-                    <a
-                        href="/hasil"
-                        class="nav-link text-light py-2"
-                        >Hasil</a
-                    >
+                    <a href="/" class="nav-link text-light py-2">Home</a>
                 </li>
             </ul>
         </div>
