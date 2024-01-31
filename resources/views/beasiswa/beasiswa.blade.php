@@ -86,7 +86,7 @@
 
             {{-- Tombol Daftar dan Batal --}}
             <div class="mb-3 d-flex justify-content-end">
-                <button type="submit" name="submit" value="daftar" id="submitBtn" class="btn btn-primary me-2" onclick="return confirm('Apakah yakin ingin menambahkan beasiswa?')">Daftar</button>
+                <button type="submit" name="submit" value="daftar" id="submitBtn" class="btn btn-primary me-2" >Daftar</button>
                 <button type="button" class="btn btn-secondary" onclick="resetFormAndRefresh()">Batal</button>
             </div>                     
         </form>
@@ -115,6 +115,29 @@
             uploadBerkas.disabled = false;
         }
     }
+</script>
+
+
+<script>
+    $(document).ready(function() {
+    $('#nama').on('input', function() {
+        var nama = $(this).val();
+
+        // Lakukan request Ajax
+        $.ajax({
+            url: '/get-ipk-by-nama',  // Ganti dengan URL endpoint di controller Anda
+            type: 'GET',
+            data: { nama: nama },
+            success: function(data) {
+                // Isi nilai IPK ke dalam input IPK
+                $('#ipk').val(data.ipk);
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    });
+});
 </script>
 @endsection
 

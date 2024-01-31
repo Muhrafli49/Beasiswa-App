@@ -79,4 +79,14 @@ class beasiswaController extends Controller
 
         return view('beasiswa.chart', compact('data'));
     }
+
+    public function getIpkByNama(Request $request)
+    {
+        $nama = $request->input('nama');
+
+        // Lakukan query ke database untuk mendapatkan IPK berdasarkan nama
+        $ipk = Beasiswa::where('nama', $nama)->value('ipk_terakhir');
+
+        return response()->json(['ipk' => $ipk]);
+    }
 }

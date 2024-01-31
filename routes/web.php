@@ -35,3 +35,5 @@ Route::put('/beasiswa/{index}', [BeasiswaController::class, 'update']);
 Route::delete('/beasiswa/{index}', [BeasiswaController::class, 'destroy']);
 
 Route::get('/beasiswa/chart', [BeasiswaController::class, 'chart']);
+
+Route::get('/get-ipk-by-nama', [BeasiswaController::class, 'getIpkByNama']);
