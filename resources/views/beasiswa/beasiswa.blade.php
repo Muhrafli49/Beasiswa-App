@@ -29,7 +29,7 @@
             {{-- Nama --}}
             <div class="mb-3">
                 <label for="nama" class="form-label">Nama</label>
-                <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama" >
+                <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama" oninput="checkNama()">
             </div>
 
             {{-- Email --}}
@@ -95,8 +95,12 @@
 
     {{-- Footer --}}
 <footer class="bg-dark text-light text-center p-3 mt-5">
-    © 2024 Copyright All Rights Reserved - Muhamad Rafli 20102031
+    Â© 2024 Copyright All Rights Reserved - Muhamad Rafli 20102031
 </footer>
+
+@endsection
+
+@section('script')
 
 <script>
     function checkInput() {
@@ -115,29 +119,25 @@
             uploadBerkas.disabled = false;
         }
     }
-</script>
 
+    function checkNama() {
+        var nama = $('#nama').val();
+        var submitButton = document.getElementById('submitBtn');
 
-<script>
-    $(document).ready(function() {
-    $('#nama').on('input', function() {
-        var nama = $(this).val();
-
-        // Lakukan request Ajax
         $.ajax({
-            url: '/get-ipk-by-nama',  // Ganti dengan URL endpoint di controller Anda
+            url: '{{ url('/get-ipk-by-nama') }}',
             type: 'GET',
             data: { nama: nama },
-            success: function(data) {
-                // Isi nilai IPK ke dalam input IPK
+            success: function (data) {
                 $('#ipk').val(data.ipk);
+                checkInput();
+                submitButton.disabled = false;
             },
-            error: function(error) {
+            error: function (error) {
                 console.log(error);
             }
         });
-    });
-});
+    }
 </script>
-@endsection
 
+@endsection

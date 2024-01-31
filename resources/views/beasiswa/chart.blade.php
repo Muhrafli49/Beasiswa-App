@@ -21,7 +21,9 @@
             <canvas id="beasiswaChart"></canvas>
         </div>
     </div>
+@endsection
 
+@section('script')
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -64,5 +66,4 @@
             });
         });
     </script>
-
 @endsection
