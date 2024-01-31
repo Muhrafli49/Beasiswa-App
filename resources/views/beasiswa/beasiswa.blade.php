@@ -86,7 +86,7 @@
 
             {{-- Tombol Daftar dan Batal --}}
             <div class="mb-3 d-flex justify-content-end">
-                <button type="submit" name="submit" value="daftar" id="submitBtn" class="btn btn-primary me-2" >Daftar</button>
+                <button type="submit" name="submit" value="daftar" id="submitBtn" class="btn btn-primary me-2" oninput="checkInput()" >Daftar</button>
                 <button type="button" class="btn btn-secondary" onclick="resetFormAndRefresh()">Batal</button>
             </div>                     
         </form>
@@ -131,7 +131,8 @@
             success: function (data) {
                 $('#ipk').val(data.ipk);
                 checkInput();
-                submitButton.disabled = false;
+                submitButton.disabled = true;
+                ipk.disabled = true;
             },
             error: function (error) {
                 console.log(error);
