@@ -14,13 +14,20 @@
                         >Home</a
                     >
                 </li>
+                <li class="nav-item me-4">
+                    <a
+                        href="/beasiswa/chart"
+                        class="nav-link text-light py-2"
+                        >Chart</a
+                    >
+                </li>
         </div>
     </nav>
     {{-- navbar end --}}
 
     <div class="container mt-4">
         <h1 class="text-center mb-4">Daftar Beasiswa </h1>
-        <a href="/beasiswa/create" class="btn btn-primary">+ Registrasi Beasiswa</a>
+        <a href="/beasiswa/create" class="btn btn-success">+ Registrasi Beasiswa</a>
         <table class="table table-hover" style="border: 2px solid #dee2e6;">
             <thead>
                 <tr>

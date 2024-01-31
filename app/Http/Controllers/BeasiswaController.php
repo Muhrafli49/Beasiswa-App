@@ -21,6 +21,7 @@ class beasiswaController extends Controller
 
     public function store(Request $request)
     {
+
         // dd($request->except(['_token', 'submit']));
         $request->validate([
             'nama' => 'required|string',
@@ -42,6 +43,7 @@ class beasiswaController extends Controller
 
     public function edit($id)
     {
+        // mendapatkan data beasiswa dengan id
         $beasiswa = Beasiswa::find($id);
         // dd($beasiswa);
         return view('beasiswa.edit', compact(['beasiswa']));
@@ -49,15 +51,32 @@ class beasiswaController extends Controller
 
     public function update($id, Request $request)
     {
+        // mendapatkan data beasiswa dengan id
         $beasiswa = Beasiswa::find($id);
+        // mengupdate dan mengecualikan _token, submit
         $beasiswa->update($request->except(['_token', 'submit']));
+        // Redirect atau lakukan tindakan lain setelah penyimpanan
         return redirect('/hasil');
     }
 
     public function destroy($id)
     {
+        // mendapatkan data beasiswa dengan id
         $beasiswa = Beasiswa::find($id);
+        // menjalankan perintah delete
         $beasiswa->delete();
+        // Redirect atau lakukan tindakan lain setelah penyimpanan
         return redirect('/hasil');
+    }
+
+    public function chart()
+    {
+        // Ambil data beasiswa dari database
+        $beasiswa = Beasiswa::all();
+
+        // Format data untuk grafik (misalnya, jumlah beasiswa per semester)
+        $data = $beasiswa->groupBy('semester')->map->count();
+
+        return view('beasiswa.chart', compact('data'));
     }
 }

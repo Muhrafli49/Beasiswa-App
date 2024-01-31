@@ -29,7 +29,7 @@
             {{-- Nama --}}
             <div class="mb-3">
                 <label for="nama" class="form-label">Nama</label>
-                <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama">
+                <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama" >
             </div>
 
             {{-- Email --}}
@@ -42,7 +42,7 @@
             {{-- Nomer HP --}}
             <div class="mb-3">
                 <label for="nomerHP" class="form-label">Nomer HP</label>
-                <input type="tel" class="form-control" id="nomerHP" name="nomer_hp" placeholder="Masukkan Nomer HP">
+                <input type="number" class="form-control" id="nomerHP" name="nomer_hp" placeholder="Masukkan Nomer HP">
             </div>
 
             {{-- Semester --}}
@@ -70,18 +70,18 @@
             {{-- Pilihan Beasiswa --}}
             <div class="mb-3">
                 <label for="pilihanBeasiswa" class="form-label">Pilihan Beasiswa</label>
-                <select class="form-select" id="pilihanBeasiswa" name="pilihan_beasiswa">
+                <select class="form-select" id="pilihanBeasiswa" name="pilihan_beasiswa" id="pilihanBeasiswa" oninput="checkInput()">
                     <option value="" selected disabled>Pilih Beasiswa</option>
-                    <option value="beasiswa1">Beasiswa 1</option>
-                    <option value="beasiswa2">Beasiswa 2</option>
-                    <option value="beasiswa3">Beasiswa 3</option>
+                    <option value="Beasiswa Akademik">Beasiswa Akademik</option>
+                    <option value="Beasiswa Non Akademik">Beasiswa Non Akademik</option>
+                    <option value="Beasiswa Kemendikbud">Beasiswa Kemendikbud</option>
                 </select>
             </div>
 
             {{-- Upload Berkas --}}
             <div class="mb-3">
                 <label for="uploadBerkas" class="form-label">Upload Berkas</label>
-                <input type="file" class="form-control" id="uploadBerkas" name="upload_berkas">
+                <input type="file" class="form-control" id="uploadBerkas" name="upload_berkas" oninput="checkInput()">
             </div>
 
             {{-- Tombol Daftar dan Batal --}}
@@ -102,11 +102,17 @@
     function checkInput() {
         var inputNumber = document.getElementById('ipk').value;
         var submitButton = document.getElementById('submitBtn');
+        var pilihanBeasiswa = document.getElementById('pilihanBeasiswa');
+        var uploadBerkas = document.getElementById('uploadBerkas');
 
         if (inputNumber < 3) {
             submitButton.disabled = true;
+            pilihanBeasiswa.disabled = true;
+            uploadBerkas.disabled = true;
         } else {
             submitButton.disabled = false;
+            pilihanBeasiswa.disabled = false;
+            uploadBerkas.disabled = false;
         }
     }
 </script>

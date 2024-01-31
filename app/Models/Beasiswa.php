@@ -10,15 +10,8 @@ class Beasiswa extends Model
     use HasFactory;
 
     public $incrementing = true;
+    // database beasiswa
     protected $table = 'beasiswa';
-    // protected $fillable = [
-    //     'nama',
-    //     'email',
-    //     'nomer_hp',
-    //     'semester',
-    //     'ipk_terakhir',
-    //     'pilihan_beasiswa',
-    //     'upload_berkas',
-    // ];
+    // memproteksikan data yang masuk
     protected $guarded = [];
 }

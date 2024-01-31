@@ -59,14 +59,19 @@
                 </select>
             </div>
 
+            <div class="mb-3">
+                <label for="ipk" class="form-label">IPK Terakhir</label>
+                <input type="text" class="form-control" id="ipk" name="ipk_terakhir" placeholder="Masukkan IPK Terakhir" value="{{ $beasiswa->ipk_terakhir }}" >
+            </div>
+
             {{-- Pilihan Beasiswa --}}
             <div class="mb-3">
                 <label for="pilihanBeasiswa" class="form-label">Pilihan Beasiswa</label>
                 <select class="form-select" id="pilihanBeasiswa" name="pilihan_beasiswa">
                     <option value="" selected disabled>Pilih Beasiswa</option>
-                    <option value="beasiswa1" {{ $beasiswa->pilihan_beasiswa == 'beasiswa1' ? 'selected' : '' }}>Beasiswa 1</option>
-                    <option value="beasiswa2" {{ $beasiswa->pilihan_beasiswa == 'beasiswa2' ? 'selected' : '' }}>Beasiswa 2</option>
-                    <option value="beasiswa3" {{ $beasiswa->pilihan_beasiswa == 'beasiswa3' ? 'selected' : '' }}>Beasiswa 3</option>
+                    <option value="Beasiswa Akademik " {{ $beasiswa->pilihan_beasiswa == 'Beasiswa Akademik' ? 'selected' : '' }}>Beasiswa Akademik</option>
+                    <option value="Beasiswa Non Akademik" {{ $beasiswa->pilihan_beasiswa == 'Beasiswa Non Akademik' ? 'selected' : '' }}>Beasiswa Non Akademik</option>
+                    <option value="Beasiswa Kemendikbud" {{ $beasiswa->pilihan_beasiswa == 'Beasiswa Kemendikbud' ? 'selected' : '' }}>Beasiswa Kemendikbud</option>
                 </select>
             </div>
 
