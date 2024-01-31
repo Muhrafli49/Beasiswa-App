@@ -25,6 +25,7 @@
     </nav>
     {{-- navbar end --}}
 
+    {{-- Table Start --}}
     <div class="container mt-4">
         <h1 class="text-center mb-4">Daftar Beasiswa </h1>
         <a href="/beasiswa/create" class="btn btn-success">+ Registrasi Beasiswa</a>
@@ -70,6 +71,7 @@
                 @endforeach
             </tbody>
         </table>
+        {{-- Table Start End--}}
     </div>
 @endsection
 

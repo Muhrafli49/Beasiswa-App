@@ -103,6 +103,7 @@
 @section('script')
 
 <script>
+    // fungsi untuk memvalidasi jika ipk dibawah 3 maka form pilihan beasiswa, uploadberkas, dan daftar disabled
     function checkInput() {
         var inputNumber = document.getElementById('ipk').value;
         var submitButton = document.getElementById('submitBtn');
@@ -120,6 +121,7 @@
         }
     }
 
+    // fungsi untuk memvalidasi bahwa nama tersebut ada dalam database
     function checkNama() {
         var nama = $('#nama').val();
         var submitButton = document.getElementById('submitBtn');
